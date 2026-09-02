@@ -197,6 +197,22 @@
       outline-offset: 5px;
     }
 
+  footer {
+    padding-top: 500px;
+    overflow: hidden;
+  }
+
+  div.footer {
+    bottom: 0px;
+    width: 100%;
+    background-color: var(--main-accent-colour);
+    color: var(--main-bg-colour);
+    border: var(--main-dark-colour) solid 1px;
+    font-size: large;
+    padding: 5px;
+    font-family: "Bahnschrift", sans-serif;
+  }
+
     @media (max-width: 700px) {
     div.card-content {
       text-align: center; 
@@ -206,22 +222,9 @@
       padding: 1.25rem; 
     }
 
-  }
-
-  footer {
-    overflow: hidden;
-  }
-
-  div.footer {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    background-color: var(--main-accent-colour);
-    color: var(--main-bg-colour);
-    border: var(--main-dark-colour) solid 1px;
-    font-size: large;
-    padding: 5px;
-    font-family: "Bahnschrift", sans-serif;
+    div.footer {
+      font-size: small;
+    }
   }
 
 </style>
