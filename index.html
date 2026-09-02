@@ -15,7 +15,6 @@
     html {
       scroll-behavior: smooth;
     }
-
     div.fill-horizontal {
       width: 100%;
     }
@@ -24,6 +23,7 @@
       margin: 0px;
       background-image: radial-gradient(#d0d6cd 1px, transparent 1px);
       background-size: 24px 24px;
+      overflow-x: hidden;
     }
     header {
       padding: 1px;
@@ -205,6 +205,23 @@
     div.card {
       padding: 1.25rem; 
     }
+
+  }
+
+  footer {
+    overflow: hidden;
+  }
+
+  div.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: var(--main-accent-colour);
+    color: var(--main-bg-colour);
+    border: var(--main-dark-colour) solid 1px;
+    font-size: large;
+    padding: 5px;
+    font-family: "Bahnschrift", sans-serif;
   }
 
 </style>
@@ -266,6 +283,16 @@
       </div>
     </section>
   </div>
+
+  <footer>
+    <div class="footer">
+      © <span id="year"></span> Little Different Games, All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
