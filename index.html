@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f2f5f0">
+  <title>Little Different Games</title>
+  <style>
+    :root {
+      --main-bg-colour: #eef4edff;
+      --main-accent-colour: #db3a34ff;
+      --main-dark-colour: rgb(1, 2, 3);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    div.fill-horizontal {
+      width: 100%;
+    }
+    body {
+      background-color: var(--main-bg-colour);
+      margin: 0px;
+      background-image: radial-gradient(#d0d6cd 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    header {
+      padding: 1px;
+      background-color: var(--main-bg-colour);
+      align-self: center;
+      overflow: hidden;
+    }
+    div#top-banner   {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--main-bg-colour);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 20px;
+      padding-bottom: 5px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    p#tagline {
+        width: 100%;
+        background-color: var(--main-accent-colour);
+        color: var(--main-bg-colour);
+        border: var(--main-dark-colour) solid 1px;
+        font-size: large;
+        padding: 5px;
+        text-align: center;
+        font-family: "Bahnschrift", sans-serif;
+    }
+    svg#logo {
+      min-width: 130px;
+    }
+    div.end-links-container {
+      width: max-content;
+      flex: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    div.end-links {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: flex-end;
+      a {        
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid #d94235;
+        color: #d94235;
+        background-color: transparent;
+        transition: all 0.2s ease;
+        margin-left: 10px;
+      }
+      a:hover {
+        background-color: #d94235;
+        color: #ffffff;
+      }
+      a svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    div.container {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h3 {
+      font-family: 'Bahnschrift', sans-serif;
+      font-size: x-large;
+      color: var(--main-accent-colour);
+      margin-block-start: 0;
+    }
+    p    
+    {
+      color: var(--main-dark-colour);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: medium;
+    }
+    s {
+      text-decoration-thickness: 1px
+    }
+    div.section-header {
+      border-bottom: 3px solid #d94235; /* Matches your brand red */
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+      h2   {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.75rem;
+        color: #111;
+        margin: 0 0 0.25rem 0;
+      }
+      p {
+        margin: 0;
+        color: #444;
+      }
+    }
+    div.card 
+    {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      background-color: var(--main-bg-colour);
+      outline: var(--main-dark-colour) solid 1px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center; 
+      justify-content: center;
+      background-color: #ffffff;
+      border: 1px solid var(--main-dark-colour);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .card-thumbnail {
+      flex: 1 1 300px; 
+      max-width: 300px;
+      width: 100%;     
+      margin: 0 auto;
+      aspect-ratio: 5 / 4;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+    .card-thumbnail img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      outline: var(--main-dark-colour) solid 1px;
+      border-radius: 5px;
+    }
+    div.card-content {
+      flex: 1 1 300px; 
+      min-width: 0;
+    }
+    a {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--main-accent-colour);
+    }
+    a.game-link {
+      display:inline-block;
+      padding: 15px;
+      border: var(--main-accent-colour) solid 1px;
+      background-color: var(--main-accent-colour);
+      color: var(--main-bg-colour);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    a.game-link-coming-soon {
+      display:inline-block;
+      padding: 15px;
+      border: var(--main-accent-colour) solid 1px;
+      background-color: var(--main-accent-colour);
+      color: var(--main-bg-colour);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    svg.logo {
+      margin-top: 5px;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #d94235;
+      outline-offset: 5px;
+    }
+
+    @media (max-width: 700px) {
+    div.card-content {
+      text-align: center; 
+    }
+    
+    div.card {
+      padding: 1.25rem; 
+    }
+  }
+
+</style>
+</head>
+
+<body>
+  <header>
+    <div id="top-banner">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" 
+      width="240" viewBox="0 0 31 13" version="1.1" id="logo">
+        <defs id="defs1"/>
+        <g id="layer1" transform="translate(-11.25215,-17.527385)">
+          <text xml:space="preserve" style="font-size:8px;font-family:'Segoe Print';-inkscape-font-specification:'Segoe Print';writing-mode:lr-tb;direction:ltr;fill:#eef4ed;fill-opacity:1;stroke:#13171f;stroke-width:0.144;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:1.81606;stroke-opacity:1" x="12.119327" y="23.521261" id="text1"><tspan x="12.119327" y="23.521261" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';fill:#eef4ed;fill-opacity:1;stroke:#13171f;stroke-width:0.144;stroke-dasharray:none;stroke-opacity:1" id="tspan4"><tspan dx="0 0 0 0 0" id="tspan7" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';fill:#eef4ed;fill-opacity:1;stroke:#13171f;stroke-width:0.144;stroke-dasharray:none;stroke-opacity:1">Little</tspan></tspan></text>
+          <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.143622;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:1.81606" x="10.620835" y="30.16556" id="text6"><tspan id="tspan6" x="10.620835" y="30.16556" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#db3a34;fill-opacity:1;stroke:#13171f;stroke-opacity:1">Different</tspan></text>
+        </g>
+      </svg>
+      <div class="end-links-container">
+        <div class="fill-horizontal"></div>
+        <div class="end-links">
+          <a href="mailto:hello@littledifferentgames.com" title="Contact us!" class="icon-btn" aria-label="Email Us">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </a>
+          <a href="https://youtube.com/@LittleDifferentGames" title="Watch us!" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="YouTube Channel">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+              <polygon points="10 15 15 12 10 9 10 15"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p id="tagline" >A little game studio, a bit different.</p>  
+  </header>
+
+
+  <div class="container">
+    <section>
+      <div class="section-header">
+        <h2>Game Demos</h2>
+        <p>Share your feedback to help decide which demo becomes the next full game!</p>
+      </div>
+      <div>
+        <div class="card">
+          <div class="card-thumbnail">
+            <!-- <a href="http://www.example.com"> -->
+              <img src="counterfeit_itch_capsule_v3.gif" alt="Half painted, half sketched canvas of a suited man's portrait." ></img>
+            <!-- </a> -->
+          </div>
+          <div class="card-content">
+            <h3>Counterfeit</h3>
+            <p><i>A humble and talentless painter wished for greater things. They didn't realise that something else was listening...</i></p>
+            <p>A first person painting game about replicating artwork, with a lighthearted <s>occult</s> story. The demo contains a prologue and the first level of the campaign, as well as a solo mode to replicate paintings at your own leisure.</p>
+            <a class="game-link-coming-soon" aria-disabled="true">Coming Soon!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
