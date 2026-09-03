@@ -24,12 +24,16 @@
       background-image: radial-gradient(#d0d6cd 1px, transparent 1px);
       background-size: 24px 24px;
       overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
       padding: 1px;
       background-color: var(--main-bg-colour);
       align-self: center;
       overflow: hidden;
+      width: 100%;
     }
     div#top-banner   {
       width: 70%;
@@ -96,6 +100,7 @@
       width: 80%;
       margin-left: auto;
       margin-right: auto;
+      flex: 1;
     }
     h3 {
       font-family: 'Bahnschrift', sans-serif;
@@ -198,19 +203,24 @@
     }
 
   footer {
-    padding-top: 500px;
     overflow: hidden;
+    padding-top: 20px;
   }
 
   div.footer {
-    bottom: 0px;
     width: 100%;
     background-color: var(--main-accent-colour);
-    color: var(--main-bg-colour);
     border: var(--main-dark-colour) solid 1px;
-    font-size: large;
-    padding: 5px;
-    font-family: "Bahnschrift", sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+        color: var(--main-bg-colour);
+        font-size: large;
+        padding: 5px;
+        font-family: "Bahnschrift", sans-serif;
+        margin: unset;
+      }
   }
 
     @media (max-width: 700px) {
@@ -223,7 +233,9 @@
     }
 
     div.footer {
-      font-size: small;
+      p {
+        font-size: small;
+      }
     }
   }
 
@@ -244,7 +256,7 @@
       <div class="end-links-container">
         <div class="fill-horizontal"></div>
         <div class="end-links">
-          <a href="mailto:hello@littledifferentgames.com" title="Contact us!" class="icon-btn" aria-label="Email Us">
+          <a href="mailto:hello@littledifferentgames.com" title="hello@littledifferentgames.com" class="icon-btn" aria-label="Email Us" onclick="navigator.clipboard.writeText('hello@littledifferentgames.com')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2"></rect>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
@@ -289,7 +301,8 @@
 
   <footer>
     <div class="footer">
-      © <span id="year"></span> Little Different Games, All Rights Reserved.
+      <p>© <span id="year"></span> Little Different Games, All Rights Reserved.</p>
+      <p>Contact: hello@littledifferentgames.com</p>
     </div>
   </footer>
 
